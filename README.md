@@ -23,7 +23,23 @@
 ### 四） 路由激活样式  
 router-link-exact-active router-link-active
 router- link   exact 属性 确切严格的匹配  
-### 四) 路由重定向
+### 五）es6的module  import export 
+- import 导入
+- export 表示导出  export 导出的是一个接口,不能是具体值 
+```js
+ let a =1 
+ let b =2 
+ //错误示范 
+ export 1 
+ export {
+	a:1,b:2
+ }
+ //正确写法
+ export{a,b}
+```
+- import {getBanner} from '../api'等价于 
+import {getBanner} from '../api/index.js '  
+ api->自动查找index.js 作为默认入口 
 
 
 ## 二、流程
@@ -55,6 +71,31 @@ import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper)
 ```
+### 四) axios 的使用 src/api/index.js 
+- npm install axios --save 
+- index.js
+```js
+```
+### 四、mock接口
+ 1) 和src同级建立mock（独立）文件夹(放在其他处也可以) mock(放mock数据) mock里面 建app.js(服务器)  banner.js（轮播图图片）  list.json（商品列表）
+ 2) express 使用 
+ - npm install express 下载express (vue-cli创建项目里面不用下，因为vue-cli是基于webpack的，webpack自带了express)
+ - app.js 
+ ```js
+    //创建express 服务器 
+   let  express = require("express")
+   let app = express()//会自动创建一个服务器
+   app.listen(3000) 
+ ```
+ - 跨域解决方式 cors 跨域 跨域资源共享 
+ - npm install cors 跨域的包 
+ ```js
+ const cors = require("cors")
+ app.use(cors())
+ ```
+ 
+
+ 
        
 
 
