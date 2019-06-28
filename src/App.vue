@@ -1,14 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">首页</router-link>&
-      <router-link to="/">列表</router-link>&
-      <router-link to="/">购物车</router-link>&
-      <router-link to="/">个人中心</router-link>
-    </div>
+    <!-- 3用标签的形式使用 -->
+    <Nav />
     <router-view />
   </div>
 </template>
+<script>
+//1 引入组件
+import Nav from "./components/Nav";
+export default {
+  //2注册
+  components: {
+    Nav
+  }
+};
+</script>
 
 <style lang="less">
+*{
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
 </style>
