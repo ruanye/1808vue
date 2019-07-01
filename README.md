@@ -97,19 +97,22 @@ import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper)
  ```
-6)api/index.js 写法
+### 四) axios 的使用 src/api/index.js 
+- npm install axios --save 
+- index.js
+1）api/index.js 写法
+```js
+const getBanner = () => axios.get('/banner');
+export { getBanner };
+```
 - import {getBanner} from '../api'等价于 
 - api->自动查找index.js 作为默认入口 
 - import {getBanner} from '../api/index.js ' 解构赋值 
 - 第二种写法 //import * as obj from "../api";  会把所有的接口挂载obj 上面 
 - 见到 export import 有2种写法  
-```js
-### 四) axios 的使用 src/api/index.js 
-- npm install axios --save 
-- index.js
-```js
 
-```
+
+
 ## 三、mock接口
  1) 和src同级建立mock（独立）文件夹(放在其他处也可以) mock(放mock数据) mock里面 建app.js(服务器)  banner.js（轮播图图片）  list.json（商品列表）
  2) express 使用 
