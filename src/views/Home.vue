@@ -1,7 +1,7 @@
 <template>
   <div>
     这是首页
-    <Banner :sliders="slider" />
+    <Banner :swiperSlides="slider" />
   </div>
 </template>
 <script>
@@ -12,17 +12,22 @@ export default {
   name: "home",
   created() {
     // ajax 异步 越早发送越好 一般放 created
-    getBanner().then(data => {
-      console.log(data);
-    });
+    this.getSlider();
   },
   data() {
     return {
-      slider: [1, 2, 3, 4]
+      slider: []
     };
   },
   components: {
     Banner
+  },
+  methods: {
+    //轮播图请求
+    async getSlider() {
+      let { banner } = await getBanner();
+      this.slider = banner;
+    }
   }
 };
 </script>

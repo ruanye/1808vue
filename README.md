@@ -20,12 +20,14 @@
 1. 用import 标签导入
 2. 在components里面注册
 3. 用标签的形式使用 
-### 四） 路由激活样式  
+### 四） 路由激活样式(掌握exact的使用) 
 router-link-exact-active router-link-active
 router- link   exact 属性 确切严格的匹配  
-### 五）es6的module  import export 
+### 五）es6的module  import export（掌握） 
 - import 导入
 - export 表示导出  export 导出的是一个接口,不能是具体值 
+- import 导入的变量 在顶级作用域，不能被更改 
+- export defautl 默认导出 后面跟具体的值   
 ```js
  let a =1 
  let b =2 
@@ -37,9 +39,33 @@ router- link   exact 属性 确切严格的匹配
  //正确写法
  export{a,b}
 ```
-- import {getBanner} from '../api'等价于 
-import {getBanner} from '../api/index.js '  
- api->自动查找index.js 作为默认入口 
+```js
+//a.js 
+export {a,b}   
+//b.js 
+//第一种写法(解构赋值)
+import {a} form  'a.js' //直接使用a
+// 第二种写法（全挂载到一个对象上面）
+import * as type from 'a.js' //使用type.a 
+```
+```js
+//a.js
+export default 1
+//b.js
+import xxx from 'a.js'
+```
+### 六） async await 异步的终极解决方案(掌握) 
+ - async 后面必须跟函数 表示函数路面有异步操作 
+ - await 后面通常跟promise(也可以跟普通值) 跟promise  表示promise的执行结果 
+###  七)  组件化的好处（了解）
+ 1. 可复用 
+ 2. 便于维护
+ 3. 可组合
+### 八） axios （掌握）
+ - axios.defaults.baseURL  抽离公共的请求路径 
+ - axios.interceptors.response.use  响应拦截器  interceptors 拦截器 
+ - axios.interceptors.request.use 请求拦截器  
+ 
 
 
 ## 二、流程
@@ -70,13 +96,21 @@ import {getBanner} from '../api/index.js '
 import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper)
-```
+ ```
+6)api/index.js 写法
+- import {getBanner} from '../api'等价于 
+- api->自动查找index.js 作为默认入口 
+- import {getBanner} from '../api/index.js ' 解构赋值 
+- 第二种写法 //import * as obj from "../api";  会把所有的接口挂载obj 上面 
+- 见到 export import 有2种写法  
+```js
 ### 四) axios 的使用 src/api/index.js 
 - npm install axios --save 
 - index.js
 ```js
+
 ```
-### 四、mock接口
+## 三、mock接口
  1) 和src同级建立mock（独立）文件夹(放在其他处也可以) mock(放mock数据) mock里面 建app.js(服务器)  banner.js（轮播图图片）  list.json（商品列表）
  2) express 使用 
  - npm install express 下载express (vue-cli创建项目里面不用下，因为vue-cli是基于webpack的，webpack自带了express)
@@ -93,10 +127,11 @@ Vue.use(VueAwesomeSwiper)
  const cors = require("cors")
  app.use(cors())
  ```
- 
+ ## getName  => get-name  相互转换  
 
- 
-       
+
+
+​       
 
 
 
