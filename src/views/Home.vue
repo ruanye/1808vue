@@ -6,8 +6,10 @@
 </template>
 <script>
 import Banner from "../components/Banner";
-//export { getBanner, getlist };
+import * as obj from "../api";
+console.log(obj.getBanner.toString());
 import { getBanner } from "../api";
+import { constants } from "fs";
 export default {
   name: "home",
   created() {

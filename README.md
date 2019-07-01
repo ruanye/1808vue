@@ -111,8 +111,6 @@ export { getBanner };
 - 第二种写法 //import * as obj from "../api";  会把所有的接口挂载obj 上面 
 - 见到 export import 有2种写法  
 
-
-
 ## 三、mock接口
  1) 和src同级建立mock（独立）文件夹(放在其他处也可以) mock(放mock数据) mock里面 建app.js(服务器)  banner.js（轮播图图片）  list.json（商品列表）
  2) express 使用 
@@ -130,7 +128,7 @@ export { getBanner };
  const cors = require("cors")
  app.use(cors())
  ```
- ## getName  => get-name  相互转换  
+ 
 
 
 

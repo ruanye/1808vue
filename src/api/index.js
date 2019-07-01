@@ -11,4 +11,5 @@ axios.interceptors.response.use(
 );
 const getBanner = () => axios.get('/banner');
 const getList = () => axios.get('/list');
-export { getBanner };
+export { getBanner,getList };
+
