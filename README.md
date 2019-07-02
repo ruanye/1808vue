@@ -4,7 +4,6 @@
 
 ### 一）package.json的作用(了解)
 - node_moudules 文件夹 -->放着我们项目的依赖 
-
 - dependencies(依赖)  devDependencies(开发依赖) 写代码的时候需要用，打包的时候不需要 npm install 其实就是走的依赖 
 - scripts 脚本 npm run serve 
 - name 项目名称, version:版本号
@@ -65,6 +64,7 @@ import xxx from 'a.js'
  - axios.defaults.baseURL  抽离公共的请求路径 
  - axios.interceptors.response.use  响应拦截器  interceptors 拦截器 
  - axios.interceptors.request.use 请求拦截器  
+ ### 九) 
  
 
 
@@ -129,6 +129,13 @@ export { getBanner };
  app.use(cors())
  ```
  
+##前端 服务端
+服务端 --> 返回数据->前端  
+前端   -->  请求数据 ->服务端  
+axios.get('http://localhost:3000/banner')
+axios.get('www.baidu.com/banner')
+
+
 
 
 
