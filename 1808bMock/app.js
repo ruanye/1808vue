@@ -10,9 +10,7 @@ function readList(filename) {
   filename = path.resolve(__dirname, filename); // 取到文件的绝对路径
   return fs.readFile(filename, 'utf-8').then(data => {
      return JSON.parse(data)
-    }).then(data=>{
-
-  })
+    })
 }
 app.listen(3000); // 服务器端口号
 app.use(cors());
