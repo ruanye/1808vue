@@ -17,12 +17,13 @@
 import Banner from "../components/Banner";
 // import * as obj from "../api";
 // console.log(obj.getBanner.toString())
-import { getHomeAll } from "../api";
+import { getBanner, getList } from "../api";
 export default {
   name: "home",
   created() {
     // ajax 异步 越早发送越好 一般放 created
-    this.getAll();
+    this.getSlider();
+    this.getL();
   },
   data() {
     return {
@@ -34,12 +35,25 @@ export default {
     Banner
   },
   methods: {
-    async getAll() {
-      let [{ banner }, { list }] = await getHomeAll();
-      this.slider = banner;
-      this.homelist = list;
-      //let res = await getHomeAll();
-      //res = [{code:200,banner:[...]},{code:200,list:[...]}]
+    //轮播图请求
+    async getSlider() {
+      //promise异常处理
+      try {
+        let { banner } = await getBanner();
+        this.slider = banner;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    async getL() {
+      //发送ajax请求
+      try {
+        let { list } = await getList();
+        //把ajax拿回来的数据挂到this上
+        this.homelist = list;
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 };

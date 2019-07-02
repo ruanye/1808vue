@@ -16,6 +16,13 @@ export default {
 };
 </script>
 <style>
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow-y: scroll;
+  bottom: 58px;
+}
 ul,
 li {
   list-style: none;

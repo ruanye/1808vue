@@ -73,6 +73,9 @@ try{
 }
 ```
 ### 十) style 标签加scoped 表示样式只对当前组件生效  
+### 十一） Pomise.all => axios.all  
+- 用法：所有的promise成功之后才会走all里面的成功  
+- 好处：多个请求完成之后把数据集合到一起 
  
 
 
