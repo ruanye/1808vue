@@ -23,6 +23,7 @@
 #nav {
   position: fixed;
   display: flex;
+  background: #fff;
   justify-content: center;
   align-items: center;
   bottom: 0;

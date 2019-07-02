@@ -1,13 +1,2 @@
-// 放轮播图的数数组
-module.exports = [
-  {
-    imgid: 1,
-    imgurl:
-      'https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/29602/28/6448/147417/5c5018e1Ed6bdfbfe/44777b12d731ad4b.jpg!cr_1125x549_0_72!q70.jpg.dpg',
-  },
-  {
-    imgid: 2,
-    imgurl:
-      'https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/46738/28/3428/133026/5d134957E0c46dd3b/b6dffccb48198359.jpg!cr_1125x549_0_72!q70.jpg.dpg',
-  },
-];
+// 导出轮播图
+module.exports=['https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/36263/12/4792/100982/5cbe8e9dE8236077a/b4777f2770a8ecb0.jpg!cr_1125x549_0_72!q70.jpg.dpg','https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/33812/25/6252/65624/5cbd7687E94f932d9/44206c42444be301.jpg!cr_1125x549_0_72!q70.jpg.dpg','https://m.360buyimg.com/mobilecms/s750x366_jfs/t1/31162/17/1128/101786/5c46ead8E22ee9740/f66061da227c1965.jpg!cr_1125x549_0_72!q70.jpg.dpg']

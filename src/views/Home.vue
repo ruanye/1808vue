@@ -3,7 +3,7 @@
     这是首页
     <Banner :swiperSlides="slider" />
     <div>
-      <ul>
+      <ul class="homelist">
         <li v-for="item in homelist"
             :key="item.id">
           <img :src="item.img"
@@ -38,15 +38,42 @@ export default {
   methods: {
     //轮播图请求
     async getSlider() {
-      let { banner } = await getBanner();
-      this.slider = banner;
+      //promise异常处理
+      try {
+        let { banner } = await getBanner();
+        this.slider = banner;
+      } catch (err) {
+        console.log(err);
+      }
     },
     async getL() {
       //发送ajax请求
-      let { list } = await getList();
-      //把ajax拿回来的数据挂到this上
-      this.homelist = list;
+      try {
+        let { list } = await getList();
+        //把ajax拿回来的数据挂到this上
+        this.homelist = list;
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 };
 </script>
+<style scoped>
+.homelist {
+  display: flex;
+  flex-wrap: wrap;
+}
+.homelist li {
+  width: 50%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.homelist li img {
+  width: 90%;
+  border-radius: 5px;
+}
+</style>

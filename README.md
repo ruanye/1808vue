@@ -64,18 +64,26 @@ import xxx from 'a.js'
  - axios.defaults.baseURL  抽离公共的请求路径 
  - axios.interceptors.response.use  响应拦截器  interceptors 拦截器 
  - axios.interceptors.request.use 请求拦截器  
- ### 九) 
+ ### 九) try catch 异常捕获 不会影响后面的代码执行   
+```js
+try{
+   要执行的代码 
+}catch(err){
+   console.log(err) 捕获到的异常 
+}
+```
+### 十) style 标签加scoped 表示样式只对当前组件生效  
  
 
 
 ## 二、流程
 ### 一） 项目的目录结构
-- mock  如果自己写模拟数据创建mock文件夹
+- mock  如果自己写模拟数据创建mock文件夹(可有可无)
 - src
  - view         页面级组件
  - libs         工具类 util.isArray 
  - componments  基础组件/公共组件 
- - api          放ajax请求 
+ - api          放ajax请求(自己建)
     - index.js
 ### 二) 搭建项目的页面 首页 列表 购物车  个人中心 详情页  配置导航路由
 
@@ -97,19 +105,31 @@ import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper)
  ```
-### 四) axios 的使用 src/api/index.js 
+### 四) axios 的使用流程 src/api/index.js 
 - npm install axios --save 
 - index.js
-1）api/index.js 写法
+1）api/index.js 导出请求的方法  
 ```js
 const getBanner = () => axios.get('/banner');
 export { getBanner };
 ```
-- import {getBanner} from '../api'等价于 
-- api->自动查找index.js 作为默认入口 
-- import {getBanner} from '../api/index.js ' 解构赋值 
-- 第二种写法 //import * as obj from "../api";  会把所有的接口挂载obj 上面 
-- 见到 export import 有2种写法  
+2）哪个组件需要数据就在哪个组件引入 
+```js
+import { getBanner} from "../api";
+```
+3) 在引入的组件里面进行调用 
+```js
+ getBanner()  //执行才会发送请求 
+```
+- 请求的写法 和async和await 效果一致
+```js
+  getBanner().then(data=>{
+      let {banner} = data;
+      this.slider =banner
+  },err=>{})
+```
+
+
 
 ## 三、mock接口
  1) 和src同级建立mock（独立）文件夹(放在其他处也可以) mock(放mock数据) mock里面 建app.js(服务器)  banner.js（轮播图图片）  list.json（商品列表）
