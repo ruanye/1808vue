@@ -17,7 +17,7 @@ module.exports = {
         });
       });
       // 列表接口 localhost:8080/list
-      app.get('/list', (req, res) => {
+      app.get('/listapi', (req, res) => {
         readList('./1808bMock/list.json').then((data) => {
           res.json({
             code: 200,

@@ -160,15 +160,24 @@ Vue.use(Vant);
  const cors = require("cors")
  app.use(cors())
  ```
+ 3) 分页接口逻辑 
+ 20条数据 ->一次拿5条 点击加载下一页的时候在拿5条 （array.slice）
+ 0-5  5-10  10-15 15-20
+ 0*5+5 1*5+5 2*5+5 3*5+5  
+ 0,1,2,3 做为每一页的参数  0 ->第一的数据 1 ->第二页的数据 2->第三页的数据 
+ localhost:3000/listapi/page=0  
  
 ##前端 服务端
 服务端 --> 返回数据->前端  
 前端   -->  请求数据 ->服务端  
 axios.get('http://localhost:3000/banner')
 axios.get('www.baidu.com/banner')
+
+
 ## mock 接口  vue.config.js配置数据 
  1. 跟目录下面建立vue.config.js  
- 2. vue.config 配置数据 需要改动的时候重新启动 npm run serve  
+ 2. vue.config 配置数据 需要改动的时候重新启动 npm run serve 
+  
 
 
 
