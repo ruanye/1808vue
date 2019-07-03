@@ -168,6 +168,7 @@ axios.get('http://localhost:3000/banner')
 axios.get('www.baidu.com/banner')
 ## mock 接口  vue.config.js配置数据 
  1. 跟目录下面建立vue.config.js  
+ 2. vue.config 配置数据 需要改动的时候重新启动 npm run serve  
 
 
 

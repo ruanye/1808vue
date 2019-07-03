@@ -16,7 +16,7 @@ module.exports = {
           banner,
         });
       });
-      // 列表接口 localhost:3000/list
+      // 列表接口 localhost:8080/list
       app.get('/list', (req, res) => {
         readList('./1808bMock/list.json').then((data) => {
           res.json({
@@ -26,6 +26,19 @@ module.exports = {
         });
       });
       // --------
+      // 购物车接口 localhost:8080/carlist
+      app.get('/carlist', (req, res) => {
+        res.json([
+          {
+            name: '苹果',
+            price: 100,
+          },
+          {
+            name: 'XIAGNGJIAO',
+            price: 100,
+          },
+        ]);
+      });
     },
   },
 };

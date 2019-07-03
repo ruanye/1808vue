@@ -16,6 +16,7 @@ axios.interceptors.response.use(
 const getBanner = () => axios.get('/banner');
 // 首页列表的请求
 const getList = () => axios.get('/list');
+const getcarlist = () => axios.get('/carlist');
 // getHomeAll合并了轮播图和首页列表的请求 执行拿到结果 [bannner:[],list:[]]
 const getHomeAll = () => axios.all([getBanner(), getList()]);
 export { getHomeAll, getList };
