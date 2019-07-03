@@ -166,7 +166,8 @@ Vue.use(Vant);
 前端   -->  请求数据 ->服务端  
 axios.get('http://localhost:3000/banner')
 axios.get('www.baidu.com/banner')
-
+## mock 接口  vue.config.js配置数据 
+ 1. 跟目录下面建立vue.config.js  
 
 
 
