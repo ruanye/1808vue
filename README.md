@@ -165,7 +165,10 @@ Vue.use(Vant);
  0-5  5-10  10-15 15-20
  0*5+5 1*5+5 2*5+5 3*5+5  
  0,1,2,3 做为每一页的参数  0 ->第一的数据 1 ->第二页的数据 2->第三页的数据 
- localhost:3000/listapi/page=0  
+ localhost:3000/listapi/page=1 第一页
+ localhost:3000/listapi/page=2 第二页
+ localhost:3000/listapi/page=3 第三页 
+ 
  
 ##前端 服务端
 服务端 --> 返回数据->前端  

@@ -33,7 +33,7 @@ app.get('/listapi', (req, res) => {
     // 例如 我只有8条数据  2*5 =10 >8
     // 定义一个是否有更多数据的变量
     const hasMore = !((page + 1) * 5 >= data.length);
-    if (typeof page === 'number') {
+    if (page && typeof page === 'number') {
       // 如果有page 证明是分页获取
       res.json({
         code: 200,
