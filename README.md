@@ -131,6 +131,15 @@ import { getBanner} from "../api";
       this.slider =banner
   },err=>{})
 ```
+### vue ui 库vant的使用
+1. 下载  npm i vant -S
+2. 导入全部组件 main.js 
+```js
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
+```
+
 
 
 

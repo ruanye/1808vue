@@ -20,5 +20,5 @@ const getList = () => axios.get('/list');
 const getHomeAll=()=>{
   return axios.all([getBanner(),getList()])
 }
-export { getHomeAll };
+export { getHomeAll,getList };
 // 1. 导出 getBanner...方法

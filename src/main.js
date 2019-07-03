@@ -3,6 +3,9 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import './assets/icon.css';
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant);
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 // require styles
 import 'swiper/dist/css/swiper.css';
