@@ -41,7 +41,7 @@ app.get('/listapi', (req, res) => {
         hasMore,
       });
     } else {
-      // 没有就返回全部数据
+      // 没有page就返回全部数据
       res.json({
         code: 200,
         list: data,
