@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-
     <div v-for="item in list"
          :key="item.id">
       <van-card :price="item.price"
