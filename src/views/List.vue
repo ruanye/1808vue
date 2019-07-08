@@ -1,5 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container"
+       ref="scele"
+       @scroll="scmore">
+
     <div v-for="item in list"
          :key="item.id">
       <van-card :price="item.price"
@@ -16,6 +19,7 @@
 </template>
 <script>
 import { getPage } from "../api";
+import { setTimeout, clearTimeout } from "timers";
 export default {
   data() {
     return {
@@ -27,7 +31,21 @@ export default {
   created() {
     this.getpagelist();
   },
+  mounted() {},
   methods: {
+    scmore() {
+      clearTimeout(this.timer);
+      //节流和防抖 节流(性能优化)
+      this.timer = setTimeout(() => {
+        console.log(2);
+        let scele = this.$refs.scele;
+        let { scrollTop, scrollHeight, clientHeight } = scele;
+        //判断到底部加载更多
+        if (clientHeight + scrollTop + 10 > scrollHeight) {
+          this.loadmore();
+        }
+      }, 13);
+    },
     async getpagelist() {
       //前端或获取第一页的数据
       let { list, hasMore } = await getPage(this.page);

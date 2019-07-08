@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <Banner :swiperSlides="slider" />
+      <Banner   :swiperSlides="slider" />
       <ul class="homelist">
         <li v-for="item in homelist"
             :key="item.id">

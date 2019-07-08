@@ -76,7 +76,11 @@ try{
 ### 十一） Pomise.all => axios.all  
 - 用法：所有的promise成功之后才会走all里面的成功  
 - 好处：多个请求完成之后把数据集合到一起 
- 
+### 十二） vue取原生dom 
+ 1. 通过this.$el 
+ 2. 通过refs(放在原生dom取的就是dom,放在组件上取的就是组件) 
+  - 设置值 ref = '自定义的值'
+  - 取值通过this.$refs.自定义的值 
 
 
 ## 二、流程
@@ -139,6 +143,9 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
 ```
+### 滚动加载更多
+页面滚动到底部的条件  
+scrollTop + clientHeight > scollHeight    
 
 
 
@@ -175,8 +182,6 @@ Vue.use(Vant);
 前端   -->  请求数据 ->服务端  
 axios.get('http://localhost:3000/banner')
 axios.get('www.baidu.com/banner')
-
-
 ## mock 接口  vue.config.js配置数据 
  1. 跟目录下面建立vue.config.js  
  2. vue.config 配置数据 需要改动的时候重新启动 npm run serve 
