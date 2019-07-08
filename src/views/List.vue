@@ -19,7 +19,6 @@
 </template>
 <script>
 import { getPage } from "../api";
-import { setTimeout, clearTimeout } from "timers";
 export default {
   data() {
     return {

@@ -81,7 +81,9 @@ try{
  2. 通过refs(放在原生dom取的就是dom,放在组件上取的就是组件) 
   - 设置值 ref = '自定义的值'
   - 取值通过this.$refs.自定义的值 
-
+### 十三) 单页应用的原理（hash history）（掌握）
+- hash 改变的方法 hashchange 函数 
+- history history.pushState({},null,'/a') 改变url不刷新页面 改变的方法 popstate   
 
 ## 二、流程
 ### 一） 项目的目录结构
@@ -144,12 +146,13 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 ```
 ### 滚动加载更多
-页面滚动到底部的条件  
-scrollTop + clientHeight > scollHeight    
-
-
-
-
+- 页面滚动到底部的条件:scrollTop + clientHeight > scollHeight 
+### loadash的使用
+```js
+npm install loadash
+ //main.js 
+ import _ from 'loadash'  
+```  
 ## 三、mock接口
  1) 和src同级建立mock（独立）文件夹(放在其他处也可以) mock(放mock数据) mock里面 建app.js(服务器)  banner.js（轮播图图片）  list.json（商品列表）
  2) express 使用 
