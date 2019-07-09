@@ -2,8 +2,7 @@
   <div class="container"
        ref="scele"
        @scroll="scmore">
-
-    <div v-for="item in list"
+   <div v-for="item in list"
          :key="item.id">
       <van-card :price="item.price"
                 :desc="item.info"

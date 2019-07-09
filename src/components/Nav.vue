@@ -5,7 +5,7 @@
       <i class="iconfont icon-meiriyicai"></i>
       <span>首页</span>
     </router-link>
-    <router-link to="/list">
+    <router-link to="/list1">
       <i class="iconfont icon-liebiao"></i>
       <span>列表</span>
     </router-link>

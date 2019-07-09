@@ -84,6 +84,32 @@ try{
 ### 十三) 单页应用的原理（hash history）（掌握）
 - hash 改变的方法 hashchange 函数 
 - history history.pushState({},null,'/a') 改变url不刷新页面 改变的方法 popstate   
+### 十四） 路由跳转
+- router-link tag 属性 把a标签转化成其他标签 
+- 路由跳转的方式 router-link   this.$router.push() 
+1. 参数为params的跳转方式 
+    1)直接拼接路径  :to='{ path: `/detail/${item.id}`}' 只能通过path 
+    2)直接写params参数  :to="{name:'detail',params:{id:item.id}}" 
+    只能通过name 
+    - 写parmas跳转的时候路由必须接受参数通过:/
+    -  用/:id  表示不固定但是必须有 多个/:id/:name 
+    - this.$route.params 
+2. 参数为query的跳转方式
+```js
+ :to="{name:'detail',query:{id:item.id}}"
+ :to="{path:'/detail',query:{id:item.id}}"
+```
+- query取值 this.$router.query 
+- 既可以用name也可以用path
+- 用query的时候路由不在需要任何处理
+- 作业：总结query和params的区别(电子版)
+  
+### 十五) $router 和$route
+1) $router 表示路由的实例 方法（push,go）
+2）$route 表示的路由的信息 属性(params,query)
+
+
+
 
 ## 二、流程
 ### 一） 项目的目录结构

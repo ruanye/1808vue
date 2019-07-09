@@ -9,10 +9,13 @@
               @load="onLoad">
       <div v-for="item in list"
            :key="item.id">
-        <van-card :price="item.price"
-                  :desc="item.info"
-                  :title="item.name"
-                  :thumb="item.img" />
+        <router-link :to="{name:'detail',query:{id:item.id}}"
+                     tag="div">
+          <van-card :price="item.price"
+                    :desc="item.info"
+                    :title="item.name"
+                    :thumb="item.img" />
+        </router-link>
       </div>
     </van-list>
   </div>
