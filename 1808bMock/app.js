@@ -49,6 +49,12 @@ app.get('/listapi', (req, res) => {
     }
   });
 });
+app.get("/detail",function(res,req){
+  //判断是谁的详情 
+  res.json({
+     //详情的数据 
+  })
+})
 // http://localhost:3000/listapi  全部的list数据
 // http://localhost:3000/listapi?page=1
 // app. 后面跟着的get post 表示前端发送过来的请求方式

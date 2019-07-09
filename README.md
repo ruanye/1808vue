@@ -102,7 +102,8 @@ try{
 - query取值 this.$router.query 
 - 既可以用name也可以用path
 - 用query的时候路由不在需要任何处理
-- 作业：总结query和params的区别(电子版)
+- 1 作业：总结query和params的区别(电子版)
+- 2 作业：详情 请求怎么写（拿是是谁的详情） 
   
 ### 十五) $router 和$route
 1) $router 表示路由的实例 方法（push,go）
@@ -235,6 +236,7 @@ localhost:8080 -> http://192.168.8.100:3000
 
 访问网页 dns解析  ping www.baidu.com -> 112.80.248.75:80
 面试题：一个网页打开到显示的流程 (作业)总结出来 纸质版 
+
 
  
      
