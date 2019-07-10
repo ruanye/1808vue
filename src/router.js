@@ -15,6 +15,11 @@ export default new Router({
       component: () => import('./views/Demo.vue'),
     },
     {
+      path: '/demo1',
+      name: 'demo1',
+      component: () => import('./views/Demo1.vue'),
+    },
+    {
       path: '/vant',
       name: 'vant',
       component: () => import('./views/Vant.vue'),

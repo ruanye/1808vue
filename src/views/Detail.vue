@@ -106,7 +106,9 @@ export default {
       }
     },
     // 分享
-    share() {},
+    share() {
+      
+    },
     // 返回
     goback() {
       this.$router.go(-1);

@@ -12,6 +12,11 @@ axios.interceptors.response.use(
     Promise.reject(err);
   },
 );
+// easymock 数据请求的轮播图
+const mockbanner = () => axios.get('https://www.easy-mock.com/mock/5d258d8670ad6c5e84533797/v/banner');
+// 面包店地址
+// return promise  axios.get 是一个promise
+
 // 轮播图请求
 const getBanner = () => axios.get('/banner');
 // 首页列表的请求
@@ -26,5 +31,7 @@ const getDetail = id => axios.get('/detail', {
 });
 // getHomeAll合并了轮播图和首页列表的请求 执行拿到结果 [bannner:[],list:[]]
 const getHomeAll = () => axios.all([getBanner(), getList()]);
-export { getHomeAll, getList, getPage,getDetail };
+export {
+  getHomeAll, getList, getPage, getDetail, mockbanner,
+};
 // 1. 导出 getBanner...方法
