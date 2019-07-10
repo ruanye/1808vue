@@ -71,10 +71,10 @@
   </div>
 </template>
 <script>
+import { getDetail } from "../api";
 export default {
   created() {
-    this.$route.query.id;
-    console.log(this.shopid);
+    this.getD();
   },
   computed: {
     shopid() {
@@ -84,18 +84,27 @@ export default {
   data() {
     return {
       goods: {
-        title: "美国伽力果（约680g/3个）",
-        price: 2680,
-        express: "免运费",
-        remain: 19,
-        thumb: [
-          "https://img.yzcdn.cn/public_files/2017/10/24/e5a5a02309a41f9f5def56684808d9ae.jpeg",
-          "https://img.yzcdn.cn/public_files/2017/10/24/1791ba14088f9c2be8c610d0a6cc0f93.jpeg"
-        ]
+        // title: "美国伽力果（约680g/3个）",
+        // price: 2680,
+        // express: "免运费",
+        // remain: 19,
+        // thumb: [
+        //   "https://img.yzcdn.cn/public_files/2017/10/24/e5a5a02309a41f9f5def56684808d9ae.jpeg",
+        //   "https://img.yzcdn.cn/public_files/2017/10/24/1791ba14088f9c2be8c610d0a6cc0f93.jpeg"
+        // ]
       }
     };
   },
   methods: {
+    //详情数据请求
+    async getD() {
+      try {
+        let { data } = await getDetail(this.shopid);
+        this.goods = data;
+      } catch (e) {
+        console.log(e);
+      }
+    },
     // 分享
     share() {},
     // 返回

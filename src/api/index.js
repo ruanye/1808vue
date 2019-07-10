@@ -18,7 +18,13 @@ const getBanner = () => axios.get('/banner');
 const getList = () => axios.get('/listapi');
 // 数据分页请求
 const getPage = page => axios.get(`/listapi?page=${page}`);
+// 详情页请求
+const getDetail = id => axios.get('/detail', {
+  params: {
+    id,
+  },
+});
 // getHomeAll合并了轮播图和首页列表的请求 执行拿到结果 [bannner:[],list:[]]
 const getHomeAll = () => axios.all([getBanner(), getList()]);
-export { getHomeAll, getList, getPage };
+export { getHomeAll, getList, getPage,getDetail };
 // 1. 导出 getBanner...方法

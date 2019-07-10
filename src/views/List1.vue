@@ -9,7 +9,7 @@
               @load="onLoad">
       <div v-for="item in list"
            :key="item.id">
-        <router-link :to="{name:'detail',query:{id:item.id}}"
+        <router-link :to="{name:'detail',params:{id:item.id}}"
                      tag="div">
           <van-card :price="item.price"
                     :desc="item.info"

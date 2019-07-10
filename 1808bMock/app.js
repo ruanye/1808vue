@@ -49,12 +49,20 @@ app.get('/listapi', (req, res) => {
     }
   });
 });
-app.get("/detail",function(res,req){
-  //判断是谁的详情 
-  res.json({
-     //详情的数据 
-  })
-})
+// 详情页面后端接口
+app.get('/detail', (req, res) => {
+  const { id } = req.query;
+  console.log(id);
+  readList('detail.json').then((data) => {
+    // 通过find方法找到id相同的项目返回
+    const detail = data.find(item => item.id == id);
+    res.json({
+      code: 200,
+      data: detail,
+    });
+  });
+});
+
 // http://localhost:3000/listapi  全部的list数据
 // http://localhost:3000/listapi?page=1
 // app. 后面跟着的get post 表示前端发送过来的请求方式
