@@ -8,7 +8,9 @@ import 'vant/lib/index.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 // require styles
 import 'swiper/dist/css/swiper.css';
+import Share from 'vue-social-share';
 
+Vue.use(Share);
 Vue.use(Vant);
 
 Vue.use(VueAwesomeSwiper);

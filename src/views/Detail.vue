@@ -1,5 +1,7 @@
 <template>
   <div class="goods">
+    <share :config="config">分享</share>
+    <br> <span>分享</span>
     <van-nav-bar title="详情"
                  left-text="返回"
                  right-text="分享"
@@ -72,6 +74,8 @@
 </template>
 <script>
 import { getDetail } from "../api";
+import "../../node_modules/social-share.js/dist/js/social-share.min.js";
+
 export default {
   created() {
     this.getD();
@@ -92,6 +96,16 @@ export default {
         //   "https://img.yzcdn.cn/public_files/2017/10/24/e5a5a02309a41f9f5def56684808d9ae.jpeg",
         //   "https://img.yzcdn.cn/public_files/2017/10/24/1791ba14088f9c2be8c610d0a6cc0f93.jpeg"
         // ]
+      },
+      config: {
+        title: "红富士苹果",
+        description: "超级好吃的苹果", // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+        image: "", // 图片, 默认取网页中第一个img标签
+        sites: ["wechat", "qq", "weibo", "douban"], // 启用的站点
+        disabled: ["google", "facebook", "twitter"], // 禁用的站点
+        wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+        wechatQrcodeHelper:
+          "<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>"
       }
     };
   },
@@ -106,9 +120,7 @@ export default {
       }
     },
     // 分享
-    share() {
-      
-    },
+    share() {},
     // 返回
     goback() {
       this.$router.go(-1);
@@ -126,7 +138,8 @@ export default {
 };
 </script>
 
-<style lang="less">
+
+<style  src="../../node_modules/social-share.js/dist/css/share.min.css">
 .goods {
   position: fixed;
   width: 100%;

@@ -110,7 +110,25 @@ try{
 2）$route 表示的路由的信息 属性(params,query)
 ### 十六) 在 template 模板  
  - 在template里面只允许有一个最外层的元素 
-
+### 十七） 加载等待效果
+ v-if 和v-show的区别  
+ - v-show display:none  用来频繁切换
+ - v-if dom操作。隐藏的话dom是没有这个元素的
+  
+   
+### 路由)
+```js 
+ {
+   path: '/car', //门  李逵家的门 
+   name: 'car',  //家的名字  
+   component: () => import('./views/Car.vue'),  //你家的地址 
+ },
+  <router-link to="/ryjia">
+  //到我家的快捷方式 
+ 如果是动态的需要 :to  :src  :class 
+```
+1. 路由对应的都是页面级组件 项目所有页面是一个村 
+   每个页面表示谁的家  
 ## 二、流程
 ### 一） 项目的目录结构
 - mock  如果自己写模拟数据创建mock文件夹(可有可无)
@@ -179,6 +197,19 @@ npm install loadash
  //main.js 
  import _ from 'loadash'  
 ```  
+### 分享功能的实现
+1. 下载插件 npm install vue-social-share -S
+2. main.js  vue里使用第三方插件通过Vue.use
+```js
+import Share from 'vue-social-share'
+Vue.use(Share)
+```
+3. 使用share 组件  在组件中 
+```html
+ <share :config="config"></share>
+```
+
+
 ## 三、mock接口 
  - nodemon  自动重启node  npm install nodemon -g 
  1) 和src同级建立mock（独立）文件夹(放在其他处也可以) mock(放mock数据) mock里面 建app.js(服务器)  banner.js（轮播图图片）  list.json（商品列表）

@@ -1,7 +1,16 @@
 <template>
   <div>
-    <div class="container">
-      <Banner   :swiperSlides="slider" />
+    <div v-if="showloading"
+         class="loading">
+      <van-loading type="spinner"
+                   color="#1989fa"
+                   size="100px"
+                   text-size="28px"
+                   vertical>疯狂加载中...</van-loading>
+    </div>
+    <div class="container"
+         v-else>
+      <Banner :swiperSlides="slider" />
       <ul class="homelist">
         <li v-for="item in homelist"
             :key="item.id">
@@ -27,7 +36,8 @@ export default {
   data() {
     return {
       slider: [],
-      homelist: []
+      homelist: [],
+      showloading: true
     };
   },
   components: {
@@ -38,6 +48,9 @@ export default {
       let [{ banner }, { list }] = await getHomeAll();
       this.slider = banner;
       this.homelist = list;
+
+      this.showloading = false;
+
       //let res = await getHomeAll();
       //res = [{code:200,banner:[...]},{code:200,list:[...]}]
     }
@@ -45,6 +58,9 @@ export default {
 };
 </script>
 <style scoped>
+.loading {
+  padding-top: 20%;
+}
 .homelist {
   width: 100%;
   display: flex;
