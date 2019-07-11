@@ -72,7 +72,9 @@ try{
    console.log(err) 捕获到的异常 
 }
 ```
-### 十) style 标签加scoped 表示样式只对当前组件生效  
+### 十) vue里面styled的属性 
+- style 标签加scoped 表示样式只对当前组件生
+- lang 表示css使用的预编译语言 scss less stylus 
 ### 十一） Pomise.all => axios.all  
 - 用法：所有的promise成功之后才会走all里面的成功  
 - 好处：多个请求完成之后把数据集合到一起 
@@ -202,6 +204,7 @@ npm install loadash
 2. main.js  vue里使用第三方插件通过Vue.use
 ```js
 import Share from 'vue-social-share'
+import 'social-share.js/dist/css/share.min.css'
 Vue.use(Share)
 ```
 3. 使用share 组件  在组件中 

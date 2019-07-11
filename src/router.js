@@ -11,6 +11,11 @@ export default new Router({
       component: () => import('./views/Home.vue'),
     },
     {
+      path:'/xuanxiangka',
+      name:'xuanxiangka',
+      component:()=>import("./views/Xuanxiangka.vue")
+    },
+    {
       path:'/ryjia',
       name:"ryjia",
       component:()=>import('./views/Ryjia.vue')

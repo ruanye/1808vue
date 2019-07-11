@@ -1,7 +1,9 @@
 <template>
   <div class="goods">
-    <share :config="config">分享</share>
-    <br> <span>分享</span>
+    <share class="share"
+           :config="config"
+           v-show="sharshow">分享</share>
+
     <van-nav-bar title="详情"
                  left-text="返回"
                  right-text="分享"
@@ -85,6 +87,7 @@ export default {
   },
   data() {
     return {
+      sharshow: false,
       goods: {
         // title: "美国伽力果（约680g/3个）",
         // price: 2680,
@@ -97,6 +100,7 @@ export default {
       },
       config: {
         disabled: [
+          "wechat",
           "google",
           "facebook",
           "twitter",
@@ -118,8 +122,10 @@ export default {
         console.log(e);
       }
     },
-    // 分享
-    share() {},
+    // 分享显示
+    share() {
+      this.sharshow = !this.sharshow;
+    },
     // 返回
     goback() {
       this.$router.go(-1);
@@ -136,13 +142,13 @@ export default {
   }
 };
 </script>
-
-
-
-<style src="../../node_modules/social-share.js/dist/css/share.min.css"></style>
-
-
-<style lang="less"  >
+<style lang="less">
+.share {
+  position: fixed;
+  top: 40px;
+  z-index: 1000;
+  right: 20px;
+}
 .goods {
   position: fixed;
   width: 100%;
