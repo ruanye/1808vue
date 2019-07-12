@@ -224,6 +224,12 @@ Vue.use(Share)
 ```html
  <share :config="config"></share>
 ```
+## vue项目打包  
+- 命令 npm run build  
+- 打包过后的项目只能在服务器访问 
+> http-server的使用  
+- npm install http-server -g
+- 在文件夹目录允许htt-server  
 
 
 ## 三、mock接口 
@@ -298,8 +304,7 @@ localhost:8080 -> http://192.168.8.100:3000
 - 选项卡   views/Xuanxiangka.vue
 - 组件使用  views/Demo1.vue (奥特曼)
 - 头部导航   component/HNav.vue
-     
-
+    
 
 
 

@@ -2,6 +2,7 @@
   <div id="app">
     <!-- 3用标签的形式使用 -->
     <Nav />
+
     <!-- 需要缓存的路由 -->
     <keep-alive>
       <router-view v-if="$route.meta.keepalive" />
@@ -15,7 +16,7 @@
 import Nav from "./components/Nav";
 export default {
   created() {
-    console.log(this.$route.meta);
+    console.log(this.$route.name);
   },
   //2注册
   components: {

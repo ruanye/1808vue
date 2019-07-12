@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    hash 实现单页面应用的原理 http://localhost:8080/a.html#a
+    <a href="#a">到a页面</a>
+    <a href="#b">到b页面</a>
+    <div id="c"></div>
+  </body>
+  <script>
+    window.onload = function() {
+      if (location.hash === "#a") {
+        c.innerHTML = "这是a页面";
+      }
+      if (location.hash === "#b") {
+        c.innerHTML = "这是b页面";
+      }
+    };
+    window.addEventListener("hashchange", function() {
+      console.log(location.hash);
+      if (location.hash === "#a") {
+        c.innerHTML = "这是a页面";
+      }
+      if (location.hash === "#b") {
+        c.innerHTML = "这是b页面";
+      }
+    });
+  </script>
+</html>

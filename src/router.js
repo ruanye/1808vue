@@ -4,25 +4,23 @@ import Router from 'vue-router';
 Vue.use(Router);
 export default new Router({
   routes: [
-
     {
       path: '/',
       name: 'home',
-      component: () => import('./views/Home.vue'),
-      meta:{
-         keepalive:true
-      }
+      component: () => import('_v/Home.vue'),
+      meta: {
+        keepalive: true,
+      },
     },
     {
-      path:'/xuanxiangka',
-      name:'xuanxiangka',
-      component:()=>import("./views/Xuanxiangka.vue")
+      path: '/xuanxiangka',
+      name: 'xuanxiangka',
+      component: () => import('./views/Xuanxiangka.vue'),
     },
     {
-      path:'/ryjia',
-      name:"ryjia",
-      component:()=>import('./views/Ryjia.vue')
-      
+      path: '/ryjia',
+      name: 'ryjia',
+      component: () => import('./views/Ryjia.vue'),
     },
     {
       path: '/demo',

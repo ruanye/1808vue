@@ -1,44 +1,16 @@
-const fs = require('fs').promises; // 文件操作
 const path = require('path');
-const banner = require('./1808bMock/banner');
-// 路径
-function readList(filename) {
-  filename = path.resolve(__dirname, filename); // 取到文件的绝对路径
-  return fs.readFile(filename, 'utf-8').then(data => JSON.parse(data));
-}
+
 module.exports = {
-  devServer: {
-    before(app) {
-      // localhost:8080/banner
-      app.get('/banner', (req, res) => {
-        res.json({
-          code: 200,
-          banner,
-        });
-      });
-      // 列表接口 localhost:8080/list
-      app.get('/listapi', (req, res) => {
-        readList('./1808bMock/list.json').then((data) => {
-          res.json({
-            code: 200,
-            list: data,
-          });
-        });
-      });
-      // --------
-      // 购物车接口 localhost:8080/carlist
-      app.get('/carlist', (req, res) => {
-        res.json([
-          {
-            name: '苹果',
-            price: 100,
-          },
-          {
-            name: 'XIAGNGJIAO',
-            price: 100,
-          },
-        ]);
-      });
-    },
+  // Vue-CLI 3.3以前publicPath叫做baseUrl
+  // publicPath: 'www.baidu.com', // 指定域名
+  outputDir: 'build', // 打包出来的路径，默认叫做dist
+  assetsDir: 'static', // 静态资源目录 js css img fonts 1常用
+  productionSourceMap: false, // 生产soucemap文件  false 不生成  2常用
+  // 修改webpack配置
+  chainWebpack: (config) => {
+    // 别名
+    config.resolve.alias
+      .set('_c', path.resolve('src/components'))
+      .set('_v', path.resolve('src/views'));
   },
 };

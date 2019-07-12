@@ -27,7 +27,7 @@
 </template>
 <script>
 //@ 表示src的绝对路径
-import HNav from "@/components/hNave";
+import HNav from "_c/hNave";
 import { getPage } from "../api";
 export default {
   data() {
