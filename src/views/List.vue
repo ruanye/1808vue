@@ -2,8 +2,10 @@
   <div class="container"
        ref="scele"
        @scroll="scmore">
-   <div v-for="item in list"
-         :key="item.id">
+    <div v-for="item in list"
+         :key="item.id"
+         @click="a">
+      <span @click.stop="toDetail(item)">去详情</span>
       <van-card :price="item.price"
                 :desc="item.info"
                 :title="item.name"
@@ -31,6 +33,13 @@ export default {
   },
   mounted() {},
   methods: {
+    a() {
+      alert("点了最大的div");
+    },
+    //跳转到详情页
+    toDetail(item) {
+      this.$router.push({ name: "detail", params: { id: item.id } });
+    },
     scmore() {
       clearTimeout(this.timer);
       //节流和防抖 节流(性能优化)

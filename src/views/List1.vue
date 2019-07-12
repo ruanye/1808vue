@@ -1,5 +1,11 @@
 <template>
   <div class="container">
+    <HNav>
+      列表
+      <!-- <template #ry>
+        <h2>阮野的100块</h2>
+      </template> -->
+    </HNav>
     <van-list v-model="loading"
               :finished="finished"
               finished-text="没有更多了"
@@ -20,6 +26,8 @@
   </div>
 </template>
 <script>
+//@ 表示src的绝对路径
+import HNav from "@/components/hNave";
 import { getPage } from "../api";
 export default {
   data() {
@@ -31,6 +39,9 @@ export default {
       hasMore: true,
       error: false
     };
+  },
+  components: {
+    HNav
   },
   created() {
     this.getL();

@@ -17,3 +17,15 @@ function sleep(numberMillis) {
 }
 sleep(5000);
 console.log(1);
+
+function f(a){
+  var a ;
+  return a 
+}
+function g(a){
+  var a="str" ;
+  return a 
+}
+
+let res = [f("hello"),g("hell0")]
+res 
